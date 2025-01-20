@@ -32,7 +32,10 @@ class BuildingController extends Controller
  *     path="/api/buildings",
  *     summary="Get list of buildings",
  *     description="Returns a list of buildings with their organizations",
- *     tags={"Buildings"},
+ *     tags={"Buildings"}, 
+ *     security={{
+ *         "apiKey": {}
+ *     }},
  *     @OA\Response(
  *         response=200,
  *         description="List of buildings",

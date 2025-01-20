@@ -20,9 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('organizations/building/{buildingId}', [OrganizationController::class, 'indexByBuilding']);
-Route::get('organizations/activity/{activityId}', [OrganizationController::class, 'indexByActivity']);
-Route::get('organizations/search/name/{name}', [OrganizationController::class, 'searchByName']);
-Route::get('organizations/{id}', [OrganizationController::class, 'show']);
-Route::get('organizations/activity-tree/{activityId}', [OrganizationController::class, 'searchByActivityTree']);
-Route::get('buildings', [BuildingController::class, 'index']);
+Route::middleware('check_api_key')->get('organizations/building/{buildingId}', [OrganizationController::class, 'indexByBuilding']);
+Route::middleware('check_api_key')->get('organizations/activity/{activityId}', [OrganizationController::class, 'indexByActivity']);
+Route::middleware('check_api_key')->get('organizations/search/name/{name}', [OrganizationController::class, 'searchByName']);
+Route::middleware('check_api_key')->get('organizations/{id}', [OrganizationController::class, 'show']);
+Route::middleware('check_api_key')->get('organizations/activity-tree/{activityId}', [OrganizationController::class, 'searchByActivityTree']);
+Route::middleware('check_api_key')->get('buildings', [BuildingController::class, 'index']);

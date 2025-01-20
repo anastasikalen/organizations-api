@@ -33,6 +33,9 @@ use OpenApi\Annotations as OA;
       *     summary="Get organizations by building",
       *     description="Returns organizations based on building ID, including phones and activities",
       *     tags={"Organizations"},
+      *     security={{
+      *         "apiKey": {}
+      *     }},
       *     @OA\Parameter(
       *         name="buildingId",
       *         in="path",
@@ -67,6 +70,9 @@ use OpenApi\Annotations as OA;
       *     summary="Get organizations by activity",
       *     description="Returns organizations related to a specific activity, including phones",
       *     tags={"Organizations"},
+      *     security={{
+      *         "apiKey": {}
+      *     }},
       *     @OA\Parameter(
       *         name="activityId",
       *         in="path",
@@ -101,6 +107,9 @@ use OpenApi\Annotations as OA;
  *     summary="Search organizations by name",
  *     description="Search for organizations by name and returns matching results",
  *     tags={"Organizations"},
+ *     security={{
+ *         "apiKey": {}
+ *     }},
  *     @OA\Parameter(
  *         name="name",
  *         in="path",
@@ -129,7 +138,10 @@ use OpenApi\Annotations as OA;
       *     path="/api/organizations/{id}",
       *     summary="Get organization by ID",
       *     description="Returns detailed information about an organization by its ID",
-      *     tags={"Organizations"},
+      *     tags={"Organizations"},      
+      *     security={{
+      *         "apiKey": {}
+      *     }},
       *     @OA\Parameter(
       *         name="id",
       *         in="path",
@@ -162,7 +174,10 @@ use OpenApi\Annotations as OA;
       *     path="/api/organizations/activity-tree/{activityId}",
       *     summary="Get organizations by activity tree",
       *     description="Returns organizations related to the activity and its children",
-      *     tags={"Organizations"},
+      *     tags={"Organizations"},  
+      *     security={{
+      *         "apiKey": {}
+      *     }},
       *     @OA\Parameter(
       *         name="activityId",
       *         in="path",

@@ -171,6 +171,12 @@ return [
         */
         'securityDefinitions' => [
             'securitySchemes' => [
+                'apiKey' => [ 
+                    'type' => 'apiKey', 
+                    'description' => 'Static key for api',
+                    'name' => 'Authorization',
+                    'in' => 'header', 
+                ],
                 /*
                  * Examples of Security schemes
                  */
